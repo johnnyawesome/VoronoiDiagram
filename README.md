@@ -2,7 +2,7 @@
 
 The famous Voronoi Diagram, coded in P5JS
 
-## There are __three__ variations of the code available!
+## There are three variations of the code available!
 
 ### Voronoy Diagram
 
