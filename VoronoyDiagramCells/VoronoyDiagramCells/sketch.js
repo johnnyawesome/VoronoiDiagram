@@ -8,6 +8,7 @@ let dispPoints = false;
 function setup() {
   angleMode(DEGREES);
   createCanvas(100, 100, P2D);
+  frameRate(10);
   background(0);
   stroke(0, 255, 0);
   initPoints();
@@ -73,7 +74,7 @@ function displayCells() {
   image(finalImage, 0, 0);
 }
 
-//If mouse clicked, add more points or reset the array
+//If mouse clicked, toggle dispPoints
 function mouseClicked() {
   dispPoints ? dispPoints = false : dispPoints = true
 }
@@ -82,12 +83,11 @@ function animateRandomPoints() {
   points.forEach((point, index) => {
     if (point.x >= 100) points[index].xMove = -0.3
     if (point.y >= 100) points[index].yMove = -0.3
-    if (point.x <= 0) points[index].xMove = +0.3
-    if (point.y <= 0) points[index].yMove = +0.3
+    if (point.x <= 0) points[index].xMove = 0.3
+    if (point.y <= 0) points[index].yMove = 0.3
     points[index].x += points[index].xMove;
     points[index].y += points[index].yMove;
-  })
-
+  });
 }
 
 function draw() {
